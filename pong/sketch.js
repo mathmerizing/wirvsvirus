@@ -36,7 +36,7 @@ let x = 0
 
 function draw() {
   //video
-  background("white")
+  background(color(51,153,255))
   push()
   if (MIRROR_VIDEO_FEED == true) {
     // flip the video vertically to create a video which functions as a mirror
@@ -91,7 +91,7 @@ function gotPoses(poses) {
     // bodyCenterY = 0.25 * (pose.leftShoulder.y+pose.leftHip.y+pose.rightShoulder.y+pose.rightHip.y);
     //bodyCenter2Y = 0.5 * (poses[1].pose.leftShoulder.y + poses[1].pose.rightShoulder.y);
   }
-  
+
   if (poses.length > 1 && poses[1].pose.score > 0.5) {
     bodyCenter2X = 0.5 * (poses[1].pose.leftEar.x + poses[1].pose.rightEar.x);
     bodyCenter2Y = 0.5 * (poses[1].pose.leftEar.y + poses[1].pose.rightEar.y);
