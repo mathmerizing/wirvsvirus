@@ -36,7 +36,7 @@ function draw_gameOver() {
   fill(46, 49, 49); // black
   let roundCorner = Height * 0.05;
   // rectangle with round corners
-  rect(Width * 0.19, Height * 0.09, Width * 0.52, Height * 0.72, roundCorner, roundCorner, roundCorner, roundCorner);
+  //rect(Width * 0.19, Height * 0.09, Width * 0.52, Height * 0.72, roundCorner, roundCorner, roundCorner, roundCorner);
 
   fill(255, 255, 255); // white
 
