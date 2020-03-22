@@ -462,7 +462,7 @@ function draw() {
       }
     }
   } else {
-    background(0, 0, 0)
+    background(46, 49, 49)
     draw_gameOver()
   }
 }
