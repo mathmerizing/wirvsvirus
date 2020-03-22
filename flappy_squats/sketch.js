@@ -73,8 +73,8 @@ function preload() {
 
 function setup() {
   var cnv = createCanvas(Width, Height);
-  var x = (windowWidth - width) / 2;
-  var y = (windowHeight - height) / 2;
+  var x = (windowWidth - Width) / 2;
+  var y = (windowHeight - Height) / 2;
   cnv.position(x, y);
   // background
   background_img = loadImage("assets/background.png");
