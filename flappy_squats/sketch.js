@@ -72,7 +72,10 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(Width, Height);
+  var cnv = createCanvas(Width, Height);
+  var x = (windowWidth - width) / 2;
+  var y = (windowHeight - height) / 2;
+  cnv.position(x, y);
   // background
   background_img = loadImage("assets/background.png");
   // bird
@@ -120,7 +123,7 @@ function draw() {
     tint(255, 40); // make video transparent
     image(video, 0, 0);
     pop();
-    
+
     if (framecount < 300) {
       draw_startingSequence();
     }
@@ -130,7 +133,7 @@ function draw() {
     if (!gameOver) {
       update(Pipes, Bird, Input);
     }
-      
+
     draw_bird(Bird);
     draw_pipes(Pipes);
     draw_score();
@@ -168,21 +171,21 @@ function draw_titlepage() {
   bodyCenterY = Height * 0.5;
   Bird.y = Height * 0.5;
   draw_bird(Bird);
-  
+
   push();
   // main title
   fill(255, 255, 255); // white
   textFont(gamerFont, 42);
   text("FLAPPY SQUATS", Width * 0.08, Height * 0.3);
-  
+
   if (framecount % 60 < 35) {
     textFont(gamerFont, 16);
     text("* Press ENTER to start game *", Width * 0.14, Height * 0.85);
   }
-  
+
   textFont(gamerFont, 8);
   text("Authors: Annika Heil, Max Schröder, Yerso Checya Sinti, Julian Roth", Width * 0.08, Height * 0.97);
-  
+
   textFont(gamerFont, 6);
   text("Font    - source: https://github.com/JoelBesada/activate-power-mode", Width * 0.08, Height * 0.985);
   text("Sprites - source: https://github.com/sourabhv/FlapPyBird", Width * 0.08, Height * 0.997);
@@ -302,7 +305,7 @@ function draw_gameOver() {
   text("Score:", Width * 0.69, Height * 0.46);
   textFont(gamerFont, 24);
   text(score, Width * (0.74 - 0.02 * (score.toString().length - 1)), Height * 0.58);
-  
+
   textFont(gamerFont, 16);
   text("Share:", Width * 0.58, Height * 0.7);
   image(share_button, Width * 0.61, Height * 0.73);
@@ -322,7 +325,7 @@ function touchStarted() {
       reset_pipes();
       gameStarted = false;
     }
-      
+
     // check if share has been pressed
     if (mouseX >= Width*0.61 && mouseX <= Width*0.61 + 48 && mouseY >= Height*0.73 && mouseY <= Height*0.73 + 48) {
       let shareableText = getShareableText();
@@ -342,7 +345,7 @@ function mouseClicked() {
       reset_pipes();
       gameStarted = false;
     }
-      
+
     // check if share has been pressed
     if (mouseX >= Width*0.61 && mouseX <= Width*0.61 + 48 && mouseY >= Height*0.73 && mouseY <= Height*0.73 + 48) {
       let shareableText = getShareableText();
