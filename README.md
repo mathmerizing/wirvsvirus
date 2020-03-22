@@ -18,3 +18,16 @@ The accuracy of the input we obtained from using posenet, was definitly a huge a
 In recent years, artificial intelligence has improved to such a degree, where open source ready to use models provide an astonishing degree of accuracy and functionality. Using such technologies, offers a great potential for very engaging and creative applications.
 ## What's next for movement-arcade
 Definitely more play testing needs to be done, as the adaptation to a new control scheme changes aspects of how we enjoy these games, space invaders especially. Though there is huge potential, adapting the base gameplay loop itself, will probably increase the enjoyment of players a lot.
+## Currently available games
+<h3> Flappy Squats </h3>
+<p align="center">
+  <img src="https://github.com/mathmerizing/wirvsvirus/blob/gh-pages/res/Screenshot_flappy_squats.png">
+</p>
+<h3> Space Invaders </h3>
+<p align="center">
+  <img src="https://github.com/mathmerizing/wirvsvirus/blob/gh-pages/res/Screenshot_space_invaders.png">
+</p>
+<h3> Pong </h3>
+<p align="center">
+  <img src="https://github.com/mathmerizing/wirvsvirus/blob/gh-pages/res/Screenshot_pong.png">
+</p>
