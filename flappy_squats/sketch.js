@@ -400,7 +400,7 @@ function update(pipes, bird, input) {
       speedMultiplier += 0.03;
       speedMultiplier = min(speedMultiplier, 3.0);
     }
-    pipes[i].x -= pipes[i].speed * speedMultiplier * (GOAL_FPS / frameRate());
+    pipes[i].x -= pipes[i].speed * speedMultiplier * (30.0 / frameRate());
   }
 
   bird.y = input;
