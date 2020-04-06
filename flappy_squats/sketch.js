@@ -1,5 +1,6 @@
 let DEPLOYMENT_URL; // "https://julianroth.org/wirvsvirus/flappy_squats"
 let gamerFont;
+let GOAL_FPS;
 
 // model objects
 let Width = 640;
@@ -101,10 +102,17 @@ function setup() {
   poseNet = ml5.poseNet(video, modelReady);
   poseNet.on('pose', gotPoses);
 
-  frameRate(60);
-  strokeWeight(0);
-
   DEPLOYMENT_URL = getURL();
+  var my_url = new URL(DEPLOYMENT_URL);
+  GOAL_FPS = parseInt(my_url.searchParams.get("fps"));
+
+  // if failed to get int value for FPS, then set as 30
+  if (isNaN(GOAL_FPS)) {
+    GOAL_FPS = 30;
+  }
+
+  frameRate(GOAL_FPS);
+  strokeWeight(0);
 }
 
 function draw() {
@@ -390,7 +398,7 @@ function update(pipes, bird, input) {
       speedMultiplier += 0.03;
       speedMultiplier = min(speedMultiplier, 3.0);
     }
-    pipes[i].x -= pipes[i].speed * speedMultiplier;
+    pipes[i].x -= pipes[i].speed * speedMultiplier * (GOAL_FPS / frameRate());
   }
 
   bird.y = input;
