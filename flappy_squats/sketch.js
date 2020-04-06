@@ -111,6 +111,8 @@ function setup() {
     GOAL_FPS = 30;
   }
 
+  console.log("FPS has been set to: " + GOAL_FPS);
+
   frameRate(GOAL_FPS);
   strokeWeight(0);
 }
