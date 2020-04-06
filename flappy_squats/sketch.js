@@ -175,6 +175,8 @@ function draw_startingSequence() {
 }
 
 function draw_titlepage() {
+  // reset speed
+  speedMultiplier = 1.0;
   // reset progressionIndex
   progressionIndex = 0;
   // reset bird position
